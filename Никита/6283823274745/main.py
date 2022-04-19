@@ -18,8 +18,8 @@ text = """привет, меня зовут Никита, я уже нескол
 Было бы интересно созвониться на 20-30 минуток? """
 
 #14460056
-api_id=15996722
-api_hash="a1e09bdd1258d51c94ef04695c5453c6"
+api_id=19862263
+api_hash="7de8c8da41e14e0f1e61718c41cde6dd"
 
 
 app = Client("me", api_id, api_hash )
@@ -41,21 +41,21 @@ async def main(v, choice_2, file_name, second):
                 if choice_2 == '3':
                     'Рассылка тестом'
                     first_name = (await app.get_users(i)).first_name
-                    sleep(second)
                     await app.send_message(i, f"{first_name} {text}")
+                    sleep(second)
                     break
 
                 elif choice_2 == '2':
                     'Рассылка с кружочками'
-                    sleep(second)
                     # await app.send_message(i, f"Приветствую " + (await app.get_users(i)).first_name)
                     await app.send_video_note(i, f"data\{file_name}.mp4")
+                    sleep(second)
                     break
 
                 elif choice_2 == '1':
                     'Рассылка с гс'
-                    sleep(second)
                     await app.send_audio(i, f"data\{file_name}.ogg")
+                    sleep(second)
                     break
 
 
@@ -94,10 +94,10 @@ def spam(data_base):
         ''')
     second = int(input('Введите задержку в секундах: '))
     if choice_2 == '2':
-        file_name = input('Ведите название файла, находящийся в папке data (.mp4 указывать не надо): \n')
+        file_name = 'Никита_кружочек'
 
     elif choice_2 == '1':
-        file_name = input('Ведите название файла, находящийся в папке data (.ogg указывать не надо): \n')
+        file_name = 'Никита_гс'
     elif choice_2 == '3':
         file_name = 'Пусто'
 
