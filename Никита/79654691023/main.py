@@ -41,21 +41,21 @@ async def main(v, choice_2, file_name, second):
                 if choice_2 == '3':
                     'Рассылка тестом'
                     first_name = (await app.get_users(i)).first_name
-                    sleep(second)
                     await app.send_message(i, f"{first_name} {text}")
+                    sleep(second)
                     break
 
                 elif choice_2 == '2':
                     'Рассылка с кружочками'
-                    sleep(second)
                     # await app.send_message(i, f"Приветствую " + (await app.get_users(i)).first_name)
                     await app.send_video_note(i, f"data\{file_name}.mp4")
+                    sleep(second)
                     break
 
                 elif choice_2 == '1':
                     'Рассылка с гс'
-                    sleep(second)
                     await app.send_audio(i, f"data\{file_name}.ogg")
+                    sleep(second)
                     break
 
 
